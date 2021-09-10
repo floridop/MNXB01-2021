@@ -1,5 +1,5 @@
 -------------------------------------------
-# MNXB01-2020 Tutorial 3 training exercises
+# MNXB01-2021 Tutorial 3 training exercises
 -------------------------------------------
 
 # Folder structure
@@ -28,4 +28,3 @@ For exercises that require commands, the solution can be inspected with
 
 You may want to open multiple terminals, one to check the solution, one to run the command.
 
-Hint: geany has also a terminal emulator! Read more on the MNXB01-manual.pdf

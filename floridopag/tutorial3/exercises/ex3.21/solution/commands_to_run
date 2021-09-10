@@ -1,3 +1,3 @@
 ./forexamples.sh
-geany forexamples.sh&
+pluma forexamples.sh&
 ./forexamples.sh
