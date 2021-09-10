@@ -11,5 +11,5 @@ fi
 #localSetupROOT
 #localSetupDQ2Client
 
-export MNXB01DIR=/nfs/shared/pp/MNXB01/
-alias cdMNXB01='cd $MNXB01DIR'
+export MNXB01DIR=/projects/hep/fs10/mnxb01
+alias cdmnxb01='cd $MNXB01DIR'
