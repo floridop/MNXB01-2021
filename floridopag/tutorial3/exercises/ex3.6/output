@@ -1,0 +1,5 @@
++ ANSWER=42+42
++ echo 'The content of the variable ANSWER is 42+42'
+The content of the variable ANSWER is 42+42
++ echo $'\342\200\234PATH' value is $'/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/nfs/software/common/bin\342\200\235'
+“PATH value is /usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/nfs/software/common/bin”

@@ -1,0 +1,46 @@
+original testwhile.sh output:
+
+Input variable value (end to exit) 
+variable value = test
+
+Input variable value (end to exit) 
+variable value = test2
+
+Input variable value (end to exit) 
+variable value = end
+
+Exercise solution testwhile.sh output:
+
+Input variable value (STOP! to exit) 
+
+#######  #######   #####   #######  
+   #     #        #     #     #     
+   #     #        #           #     
+   #     #####     #####      #     
+   #     #              #     #     
+   #     #        #     #     #     
+   #     #######   #####      #     
+
+
+Input variable value (STOP! to exit) 
+
+#######  #######   #####   #######   ###   
+   #     #        #     #     #     #   #  
+   #     #        #           #     #   #  
+   #     #####     #####      #        #   
+   #     #              #     #       #    
+   #     #        #     #     #      #     
+   #     #######   #####      #     #####  
+
+
+Input variable value (STOP! to exit) 
+
+ #####   #######  #######  ######    ###   
+#     #     #     #     #  #     #   ###   
+#           #     #     #  #     #   ###   
+ #####      #     #     #  ######     #    
+      #     #     #     #  #               
+#     #     #     #     #  #         ###   
+ #####      #     #######  #         ###   
+
+

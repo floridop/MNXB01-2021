@@ -1,0 +1,13 @@
+cp ~/.bash_profile ~/bash_profile20200911backup
+geany ~/.bash_profile &
+
+#Add at the end of the file the following lines:
+MNXB01DIR=/nfs/shared/pp/MNXB01/
+alias cdMNXB01='cd $MNXB01DIR'
+#save
+
+source ~/.bash_profile
+
+cdMNXB01
+
+# test that the alias is present by writing cd and pressing TAB

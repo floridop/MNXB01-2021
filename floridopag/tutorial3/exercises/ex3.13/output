@@ -1,0 +1,26 @@
+[pflorido@pptest-iridium solution]$ [[ -e /etc ]] 
+[pflorido@pptest-iridium solution]$ echo $?
+0
+[pflorido@pptest-iridium solution]$ [[ -e /doesnotexist ]]
+[pflorido@pptest-iridium solution]$ echo $?
+1
+[pflorido@pptest-iridium solution]$ [[ 15 -lt 15 ]] 
+[pflorido@pptest-iridium solution]$ echo $?
+1
+[pflorido@pptest-iridium solution]$ [[ 16 -lt 15 ]]
+[pflorido@pptest-iridium solution]$ echo $?
+1
+[pflorido@pptest-iridium solution]$ [[ 15 -eq 15 ]]
+[pflorido@pptest-iridium solution]$ echo $?
+0
+[pflorido@pptest-iridium solution]$ [[ 15 == 15 ]]
+[pflorido@pptest-iridium solution]$ echo $?
+0
+[pflorido@pptest-iridium solution]$ [[ ‘large’ != ‘small’ ]]
+[pflorido@pptest-iridium solution]$ echo $?
+0
+[pflorido@pptest-iridium solution]$ [[ ‘large’ -ne ‘small’ ]]
+-bash: [[: ‘large’: syntax error: operand expected (error token is "‘large’")
+[pflorido@pptest-iridium solution]$ echo $?
+1
+

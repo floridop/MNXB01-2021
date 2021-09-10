@@ -1,0 +1,7 @@
+[pflorido@pptest-iridium ex3.14]$ ../../examples/bash/testif.sh arg1;  echo $?
+Not enough arguments. Must be at least 3!
+1
+[pflorido@pptest-iridium ex3.14]$ ../../examples/bash/testif.sh arg1 arg2 arg3; echo $?
+More than 2 arguments. Good!
+0
+

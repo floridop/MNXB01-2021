@@ -1,0 +1,4 @@
+USERINFO is: uid=6312(pflorido) gid=34000(clusterusers) groups=34000(clusterusers),46300(ppguests),6300(hep),6500(npusers),6300(hep)
+MAINGROUP is: uid=6312(pflorido)
+MAINGROUP reusing the $USERINFO variable content:
+uid=6312(pflorido)

@@ -1,0 +1,3 @@
+./testwhile.sh
+geany testwhile.sh&
+./testwhile.sh

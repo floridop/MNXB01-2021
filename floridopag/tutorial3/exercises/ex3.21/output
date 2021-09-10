@@ -1,0 +1,39 @@
+Original forexample.sh output:
+“one”
+“two”
+“three”
+“now counting 10”
+“now counting 9”
+“now counting 8”
+“now counting 7”
+“now counting 6”
+“now counting 5”
+“now counting 4”
+“now counting 3”
+“now counting 2”
+“now counting 1”
+
+######   #######  #######  #     #   ###   
+#     #  #     #  #     #  ##   ##   ###   
+#     #  #     #  #     #  # # # #   ###   
+######   #     #  #     #  #  #  #    #    
+#     #  #     #  #     #  #     #         
+#     #  #     #  #     #  #     #   ###   
+######   #######  #######  #     #   ###   
+
+
+Exercise solution forexample.sh output
+
+“now counting 2”
+“now counting 4”
+“now counting 8”
+“now counting 16”
+
+######   #######  #######  #     #   ###   
+#     #  #     #  #     #  ##   ##   ###   
+#     #  #     #  #     #  # # # #   ###   
+######   #     #  #     #  #  #  #    #    
+#     #  #     #  #     #  #     #         
+#     #  #     #  #     #  #     #   ###   
+######   #######  #######  #     #   ###   
+

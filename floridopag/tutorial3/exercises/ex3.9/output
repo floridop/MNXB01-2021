@@ -1,0 +1,15 @@
+[pflorido@pptest-iridium solution]$ bash command_to_run 
+command_to_run: line 1: syntax error near unexpected token `42'
+command_to_run: line 1: `./answers.sh (42)'
+[pflorido@pptest-iridium solution]$ bash command_to_run ./answers.sh^C
+[pflorido@pptest-iridium solution]$ ./answers.sh (42)
+-bash: syntax error near unexpected token `42'
+[pflorido@pptest-iridium solution]$ ./answers.sh "(42)"
+You asked me to print: (42)
+[pflorido@pptest-iridium solution]$ ./answers.sh '(42)'
+You asked me to print: (42)
+[pflorido@pptest-iridium solution]$ ./answers.sh "$PATH"
+You asked me to print: /usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/nfs/software/common/bin
+[pflorido@pptest-iridium solution]$ ./answers.sh '$PATH'
+You asked me to print: $PATH
+

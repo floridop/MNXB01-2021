@@ -1,0 +1,5 @@
+./answers.sh (42)
+./answers.sh "(42)"
+./answers.sh '(42)'
+./answers.sh "$PATH"
+./answers.sh '$PATH'

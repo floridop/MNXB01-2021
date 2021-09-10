@@ -1,0 +1,4 @@
+ls ~
+ls /etc/MNXB01
+ls ~; ls /etc/MNXB01
+ls /etc/MNXB01; ls ~

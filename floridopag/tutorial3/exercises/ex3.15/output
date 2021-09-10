@@ -1,0 +1,6 @@
+[pflorido@pptest-iridium solution]$ ./testif.sh arg1 arg2 arg3
+More than 2 arguments. Good!
+Good: the first two parameters differ.
+[pflorido@pptest-iridium solution]$ ./testif.sh arg1 arg1 arg3
+More than 2 arguments. Good!
+Error: the first two parameters are the same string

@@ -1,0 +1,20 @@
+[pflorido@pptest-iridium solution]$ ls /
+bin  boot  cgroup  cvmfs  dev  etc  home  lib  lib64  lost+found  media  misc  mnt  net  nfs  nfs4export  nodestmp  opt  proc  root  sbin  selinux  srv  sys  tmp  usr  var
+[pflorido@pptest-iridium solution]$ echo $?
+0
+[pflorido@pptest-iridium solution]$ ls /etc/MNXB01
+ls: cannot access /etc/MNXB01: No such file or directory
+[pflorido@pptest-iridium solution]$ echo $?
+2
+[pflorido@pptest-iridium solution]$ ls / ; ls /etc/MNXB01
+bin  boot  cgroup  cvmfs  dev  etc  home  lib  lib64  lost+found  media  misc  mnt  net  nfs  nfs4export  nodestmp  opt  proc  root  sbin  selinux  srv  sys  tmp  usr  var
+ls: cannot access /etc/MNXB01: No such file or directory
+[pflorido@pptest-iridium solution]$ echo $?
+2
+[pflorido@pptest-iridium solution]$ ls /etc/MNXB01 ; ls /
+ls: cannot access /etc/MNXB01: No such file or directory
+bin  boot  cgroup  cvmfs  dev  etc  home  lib  lib64  lost+found  media  misc  mnt  net  nfs  nfs4export  nodestmp  opt  proc  root  sbin  selinux  srv  sys  tmp  usr  var
+[pflorido@pptest-iridium solution]$ echo $?
+0
+[pflorido@pptest-iridium solution]$ 
+

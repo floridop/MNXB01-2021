@@ -1,0 +1,46 @@
+[pflorido@pptest-iridium ex3.19]$ ./envtest.sh 
+MYENV1 not defined in the environment or empty. Please run
+  export MYENV1="This is my first environment variable. This is exported to all children processes"
+
+Content of MYENV1: 
+Content of MYENV2: This is my second environment variable, MYENV2 is defined only in this process
+Content of MYENV3: This is my third environment variable, exported. MYENV3 is defined here and in all children processes
+Now check if MYENV2 and MYENV3 contents are still defined, with the commands:
+  echo "Content of MYENV2: $MYENV2"
+  echo "Content of MYENV3: $MYENV3"
+
+[pflorido@pptest-iridium ex3.19]$ export MYENV1="This is my first environment variable. This is exported to all children processes"
+[pflorido@pptest-iridium ex3.19]$ ./envtest.sh 
+Content of MYENV1: This is my first environment variable. This is exported to all children processes
+Content of MYENV2: This is my second environment variable, MYENV2 is defined only in this process
+Content of MYENV3: This is my third environment variable, exported. MYENV3 is defined here and in all children processes
+Now check if MYENV2 and MYENV3 contents are still defined, with the commands:
+  echo "Content of MYENV2: $MYENV2"
+  echo "Content of MYENV3: $MYENV3"
+
+[pflorido@pptest-iridium ex3.19]$   echo "Content of MYENV2: $MYENV2"
+Content of MYENV2: 
+[pflorido@pptest-iridium ex3.19]$   echo "Content of MYENV3: $MYENV3"
+Content of MYENV3: 
+
+[pflorido@pptest-iridium ex3.19]$ source envtest.sh 
+Content of MYENV1: This is my first environment variable. This is exported to all children processes
+Content of MYENV2: This is my second environment variable, MYENV2 is defined only in this process
+Content of MYENV3: This is my third environment variable, exported. MYENV3 is defined in this process and in all children processes
+Now check if MYENV2 and MYENV3 contents are still defined, with the commands:
+  echo "Content of MYENV2: $MYENV2"
+  echo "Content of MYENV3: $MYENV3"
+
+[pflorido@pptest-iridium ex3.19]$   echo "Content of MYENV2: $MYENV2"
+Content of MYENV2: This is my second environment variable, MYENV2 is defined only in this process
+[pflorido@pptest-iridium ex3.19]$   echo "Content of MYENV3: $MYENV3"
+Content of MYENV3: This is my third environment variable, exported. MYENV3 is defined in this process and in all children processes
+
+[pflorido@pptest-iridium ex3.19]$ bash
+bash-4.1$   echo "Content of MYENV1: $MYENV1"
+Content of MYENV1: This is my first environment variable. This is exported to all children processes
+bash-4.1$   echo "Content of MYENV2: $MYENV2"
+Content of MYENV2: 
+bash-4.1$   echo "Content of MYENV3: $MYENV3"
+Content of MYENV3: This is my third environment variable, exported. MYENV3 is defined in this process and in all children processes
+

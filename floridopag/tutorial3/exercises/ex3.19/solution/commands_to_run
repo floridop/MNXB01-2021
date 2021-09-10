@@ -1,0 +1,9 @@
+./envtest.sh
+export MYENV1="This is my first environment variable. This is exported to all children processes"
+echo "Content of MYENV1: $MYENV1"
+echo "Content of MYENV2: $MYENV2"
+echo "Content of MYENV3: $MYENV3"
+bash
+echo "Content of MYENV2: $MYENV1"
+echo "Content of MYENV2: $MYENV2"
+echo "Content of MYENV3: $MYENV3"

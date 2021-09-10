@@ -1,0 +1,8 @@
+[[ -e /etc ]] 
+[[ -e /doesnotexist ]]
+[[ 15 -lt 15 ]] 
+[[ 16 -lt 15 ]]
+[[ 15 -eq 15 ]]
+[[ 15 == 15 ]]
+[[ ‘large’ != ‘small’ ]]
+[[ ‘large’ -ne ‘small’ ]]
