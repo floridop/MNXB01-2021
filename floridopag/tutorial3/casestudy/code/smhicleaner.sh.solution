@@ -42,52 +42,53 @@ usage(){
 ###### Functions END =##################################################
 
 
-# Get the first parameter from the command line:
-# TODO (see Tutorial 3 slides 40,41)
+# T1 Get the first parameter from the command line:
+# (see Tutorial 3 slides 39,40)
 # and put it in the variable SHMIINPUT
 SMHIINPUT=$1
 
-# Input parameter validation:
+# T2 Input parameter validation:
 # Check that the variable SMHIINPUT is defined, if not, 
 # inform the user, show the script usage by calling the usage() 
 # function in the library above and exit with error
-# TODO See Tutorial3 Exercise 3.19
+# See Tutorial3 Slide 47 and exercises 3.14, 3.15
 if [[ "x$SMHIINPUT" == 'x' ]]; then
    echo "Missing input file parameter, exiting"
    usage
    exit 1
 fi
 
-# Extract filename:
+# T3 Extract filename:
 # Extract the name of the file using the "basename" command 
 # basename examples: https://www.geeksforgeeks.org/basename-command-in-linux-with-examples/
 # then store it in a variable DATAFILE
 DATAFILE=$(basename $SMHIINPUT)
 
-# Analyze the input parameter and copy:
+# T4 Analyze the input parameter and copy:
 
-# If $SMHIINPUT not empty
+# T4.1 If $SMHIINPUT not empty
 if [[ "x$SMHIINPUT" != "x" ]]; then
-   # check if the file is a directory, it should not be!
+   # T4.2 check if the file is a directory, it should not be!
+   # exit with error in case.
    if [[ -d $SMHIINPUT ]]; then
       echo -e "This script requires a data file and not a directory, exiting..."     
       exit 1
    fi
-   # Copy the file in the current directory as
+   # T4.3 Copy the file in the current directory as
    #    original_$DATAFILE
    # use the -a option to preserve filesystem information (permissions etc)
    echo "Copying input file $SMHIINPUT to original_$DATAFILE"
    cp -a $SMHIINPUT ./original_$DATAFILE
 fi 
 
-# Check that the input file has been copied with no errors:
+# T5 Check that the input file has been copied with no errors:
 # Write an IF statement that does the following:
 # If any of the previous commands failed, exit with error 
 # and tell the user what happened.
 # remind the user of the syntax by calling the usage() function defined
 # in the libraries section above.
-# TODO test and set the $? variable, Tutorial 3 slides 43, 44, 
-# and previous years exercises (Tutorial 3 slide 20)
+# test the $? variable, Tutorial 3 slides 41, 42 
+# and previous years exercises (Tutorial 3 slide 15)
 if [[ $? != 0 ]]; then
    echo "Error downloading or copying file, maybe wrong command syntax? exiting...."
    usage
@@ -96,7 +97,7 @@ fi
 
 # If we got here without errors, we can start cleaning up!
 
-# Identify the data starting line:
+# T6 Identify the data starting line:
 # Looking at the SHMI data, it seems that the line that contains the
 # string "Datum" is the beginning of data.
 # Find what line contains the string "Datum" using grep
@@ -104,32 +105,33 @@ fi
 # - use the grep option -n  and cut to take just the number.
 # - use the cut command to select field 1 using ':' as separator
 # - Use the pipe | to pass the output of grep to cut
-# TODO Examples about the above can be found in Tutorial 3 slide 85
+# Examples about the above can be found in Tutorial 3 slide 84 and 
+# some on Tutorial 2
 # read also:
 # https://stackoverflow.com/questions/6958841/use-grep-to-report-back-only-line-numbers
 echo "Finding the first line containing 'Datum'..."
 STARTLINE=$(grep -n 'Datum' original_${DATAFILE} | cut -d':' -f 1)
 
-# skip one more header line:
+# T7 skip one more header line:
 # Use arithmetic expansion to add a line, since the actual 
 # data starts at the STARTLINE + 1 line, so to remove the header
 # where Datum;... is contained
-# TODO:
+# See Slides 86, 90
 STARTLINE=$(( $STARTLINE + 1 ))
 
-# Remove unnecessary lines at the top of the datafile:
+# T8 Remove unnecessary lines at the top of the datafile:
 # Strip away the top STARTLINE lines (the value of $STARTLINE) using 
 # the tail command and write the result 
 # to as file called clean1_$DATAFILE using the > operator to 
 # redirect the standard output.
 # how to exclude n lines with tail : http://heyrod.com/snippets/skip-n-lines.html
-# TODO        > operator see Tutorial 2 slide 13
-#         Redirecting output: https://thoughtbot.com/blog/input-output-redirection-in-the-shell#redirecting-output
+# For the use of the > operator, see Tutorial 2
+# Redirecting output: https://thoughtbot.com/blog/input-output-redirection-in-the-shell#redirecting-output
 # You can verify the generated file against the same file in tutorial3/homework3/result
 echo "Removing the first $STARTLINE lines, result in clean1_${DATAFILE}"
 tail -n +$STARTLINE original_${DATAFILE} > clean1_${DATAFILE}
 
-# Fix format for the strange lines with comments:
+# T9 Fix format for the strange lines with comments:
 # consider only the relevant columns (1,2,3,4,5) using cut
 # this will clean up the lines at the beginning of the data 
 # that are not consistent with the format, so that we can use the data 
@@ -141,12 +143,12 @@ tail -n +$STARTLINE original_${DATAFILE} > clean1_${DATAFILE}
 echo "Selecting only relevant columns, result in clean2_${DATAFILE}"
 cut -d';' -f 1,2,3,4,5 clean1_${DATAFILE} > clean2_${DATAFILE}
 
-# Convert format to C++ readable with spaces instead of commas:
+# T10 Convert format to C++ readable with spaces instead of commas:
 # Change semicolons to singe spaces using sed and 
 # write out the result to a file called rawdata_${DATAFILE}
-# TODO read about sed at the links in Tutorial 3 slide 85,
+# TODO read about sed at the links in Tutorial 3 slide 84,
 # and here: https://linuxize.com/post/how-to-use-sed-to-find-and-replace-string-in-files/
-# You can verify the generated file against the same file in tutorial3/homework3/result
+# You can verify the generated file against the same file in tutorial3/casestudy/result
 echo "Substituting the ; with spaces, result in rawdata_${DATAFILE}"
 sed 's/;/ /g' clean2_${DATAFILE} > rawdata_${DATAFILE}
 
