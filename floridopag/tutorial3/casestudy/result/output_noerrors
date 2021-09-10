@@ -1,0 +1,6 @@
+Copying input file ../data/smhi-opendata_1_52230_20210906_212532.csv to original_smhi-opendata_1_52230_20210906_212532.csv
+Finding the first line containing 'Datum'...
+Removing the first 11 lines, result in clean1_smhi-opendata_1_52230_20210906_212532.csv
+Selecting only relevant columns, result in clean2_smhi-opendata_1_52230_20210906_212532.csv
+Substituting the ; with spaces, result in rawdata_smhi-opendata_1_52230_20210906_212532.csv
+Writing filesizes summary to report_smhi-opendata_1_52230_20210906_212532.csv

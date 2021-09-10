@@ -1,0 +1,9 @@
+Copying input file ../unexistingfile to original_unexistingfile
+cp: cannot stat '../unexistingfile': No such file or directory
+Error downloading or copying file, maybe wrong command syntax? exiting....
+----
+  To call this script please use
+   ../code/smhicleaner.sh '<path>'
+  Example:
+   ../code/smhicleaner.sh '/tutorial3/homework3/data/smhi-opendata_1_52240_20200905_163726.csv'
+----

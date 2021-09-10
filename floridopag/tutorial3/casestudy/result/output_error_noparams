@@ -1,0 +1,7 @@
+Missing input file parameter, exiting
+----
+  To call this script please use
+   ../code/smhicleaner.sh.solution '<path>'
+  Example:
+   ../code/smhicleaner.sh.solution '/tutorial3/homework3/data/smhi-opendata_1_52240_20200905_163726.csv'
+----
