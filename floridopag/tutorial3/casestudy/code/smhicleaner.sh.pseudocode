@@ -45,40 +45,39 @@ usage(){
 # T1 Get the first parameter from the command line:
 # (see Tutorial 3 slides 39,40)
 # and put it in the variable SMHIINPUT
-SMHIINPUT=$1
+SHMIINPUT=YOUR_CODE_HERE
 
 # T2 Input parameter validation:
 # Check that the variable SMHIINPUT is defined, if not, 
 # inform the user, show the script usage by calling the usage() 
 # function in the library above and exit with error
 # See Tutorial3 Slide 47 and exercises 3.14, 3.15
-if [[ "x$SMHIINPUT" == 'x' ]]; then
+if YOUR_CODE_HERE
    echo "Missing input file parameter, exiting"
-   usage
-   exit 1
+   YOUR_CODE_HERE
 fi
 
 # T3 Extract filename:
 # Extract the name of the file using the "basename" command 
 # basename examples: https://www.geeksforgeeks.org/basename-command-in-linux-with-examples/
 # then store it in a variable DATAFILE
-DATAFILE=$(basename $SMHIINPUT)
+DATAFILE=YOUR_CODE_HERE
 
 # T4 Analyze the input parameter and copy:
 
 # T4.1 If $SMHIINPUT not empty
-if [[ "x$SMHIINPUT" != "x" ]]; then
+if YOUR_CODE_HERE
    # T4.2 check if the file is a directory, it should not be!
    # exit with error in case.
-   if [[ -d $SMHIINPUT ]]; then
+   if YOUR_CODE_HERE
       echo -e "This script requires a data file and not a directory, exiting..."     
-      exit 1
+      YOUR_CODE_HERE
    fi
    # T4.3 Copy the file in the current directory as
    #    original_$DATAFILE
    # use the -a option to preserve filesystem information (permissions etc)
    echo "Copying input file $SMHIINPUT to original_$DATAFILE"
-   cp -a $SMHIINPUT ./original_$DATAFILE
+   YOUR_CODE_HERE
 fi 
 
 # T5 Check that the input file has been copied with no errors:
@@ -89,10 +88,9 @@ fi
 # in the libraries section above.
 # test the $? variable, Tutorial 3 slides 41, 42 
 # and previous years exercises (Tutorial 3 slide 15)
-if [[ $? != 0 ]]; then
+if YOUR_CODE_HERE
    echo "Error downloading or copying file, maybe wrong command syntax? exiting...."
-   usage
-   exit 1
+   YOUR_CODE_HERE
 fi
 
 # If we got here without errors, we can start cleaning up!
@@ -110,14 +108,14 @@ fi
 # read also:
 # https://stackoverflow.com/questions/6958841/use-grep-to-report-back-only-line-numbers
 echo "Finding the first line containing 'Datum'..."
-STARTLINE=$(grep -n 'Datum' original_${DATAFILE} | cut -d':' -f 1)
+STARTLINE=YOUR_CODE_HERE
 
 # T7 skip one more header line:
 # Use arithmetic expansion to add a line, since the actual 
 # data starts at the STARTLINE + 1 line, so to remove the header
 # where Datum;... is contained
 # See Slides 86, 90
-STARTLINE=$(( $STARTLINE + 1 ))
+STARTLINE=YOUR_CODE_HERE
 
 # T8 Remove unnecessary lines at the top of the datafile:
 # Strip away the top STARTLINE lines (the value of $STARTLINE) using 
@@ -129,7 +127,7 @@ STARTLINE=$(( $STARTLINE + 1 ))
 # Redirecting output: https://thoughtbot.com/blog/input-output-redirection-in-the-shell#redirecting-output
 # You can verify the generated file against the same file in tutorial3/casestudy/result
 echo "Removing the first $STARTLINE lines, result in clean1_${DATAFILE}"
-tail -n +$STARTLINE original_${DATAFILE} > clean1_${DATAFILE}
+YOUR_CODE_HERE
 
 # T9 Fix format for the strange lines with comments:
 # consider only the relevant columns (1,2,3,4,5) using cut
@@ -141,7 +139,7 @@ tail -n +$STARTLINE original_${DATAFILE} > clean1_${DATAFILE}
 #       "5. Select Multiple Fields from a File"
 # You can verify the generated file against the same file in tutorial3/casestudy/result
 echo "Selecting only relevant columns, result in clean2_${DATAFILE}"
-cut -d';' -f 1,2,3,4,5 clean1_${DATAFILE} > clean2_${DATAFILE}
+YOUR_CODE_HERE
 
 # T10 Convert format to C++ readable with spaces instead of commas:
 # Change semicolons to singe spaces using sed and 
@@ -150,7 +148,7 @@ cut -d';' -f 1,2,3,4,5 clean1_${DATAFILE} > clean2_${DATAFILE}
 # and here: https://linuxize.com/post/how-to-use-sed-to-find-and-replace-string-in-files/
 # You can verify the generated file against the same file in tutorial3/casestudy/result
 echo "Substituting the ; with spaces, result in rawdata_${DATAFILE}"
-sed 's/;/ /g' clean2_${DATAFILE} > rawdata_${DATAFILE}
+YOUR_CODE_HERE
 
 # initialize empty report file
 # here I use the special device /dev/null so that if there is already
@@ -166,7 +164,5 @@ cat /dev/null > report_${DATAFILE}
 # to verify the results: compare your output with the script_output file
 # in the tutorial3/casestudy/result folder
 echo "Writing filesizes summary to report_${DATAFILE}"
-for csvfile in *.csv; do
-    SIZE=`stat -c %s $csvfile`
-    echo "   file $csvfile has size: $SIZE" >> report_${DATAFILE}
+for YOUR_CODE_HERE
 done
