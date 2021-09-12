@@ -1,0 +1,40 @@
+# This bash code must be sourced inside the cityandyear.sh script
+
+# The following function prints on screen an error message when the
+# If the cityandyear.sh was not called with the proper parameters
+usage() {
+	echo "----"
+	echo -e "  To call this script please use"
+	echo -e "   $0 '<datapath>' '<cityname>' '<year>'"
+	echo -e "  Example:"
+    echo -e "   $0 '../data/' 'Ystad' '2000'"
+	echo "----"
+}
+
+# The following function prints an error and exists 
+# if the argument variable is not defined
+# Usage: checkvar VARIABLENAME
+checkvar() {
+if [[ "x${!1}" == 'x' ]]; then
+   echo "Missing $1 parameter, exiting..."
+   usage
+   exit 1
+fi
+}
+
+# Applieas the checkvar function to the parameters required by the 
+# cityandyear.sh script.
+checkparameters(){
+for var in DATAPATH CITY YEAR; do
+    checkvar $var
+done
+}
+
+# Checks that the input data directory it's actually a directory
+# Usage: checkdir <PATH>
+checkdir(){
+if [[ ! -d $1 ]]; then
+   echo "DATAPATH: '$DATAPATH' is not a valid directory path, exiting..."
+   exit 1
+fi
+}

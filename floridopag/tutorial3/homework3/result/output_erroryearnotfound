@@ -1,0 +1,4 @@
+found file ../data//smhi-opendata_1_53260_20210906_214756.csv
+running smhicleaner on file ../data//smhi-opendata_1_53260_20210906_214756.csv
+Found RAW data: rawdata_smhi-opendata_1_53260_20210906_214756.csv. Start processing with grep...
+Year 1984 not found, exiting
