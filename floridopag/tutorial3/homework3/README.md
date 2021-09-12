@@ -66,6 +66,7 @@ The first lines of the final result should look like this sample below:
 ```console
 found file ../data//smhi-opendata_1_53260_20210906_214756.csv
 running smhicleaner on file ../data//smhi-opendata_1_53260_20210906_214756.csv
+Found RAW data: rawdata_smhi-opendata_1_53260_20210906_214756.csv. Start processing with grep...
 1983-01-01 06:00:00 2.9 G
 1983-01-01 09:00:00 3.4 G
 1983-01-01 12:00:00 3.6 G
