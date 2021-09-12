@@ -230,3 +230,12 @@ left untouched. You need to send me the bash command you would run for this to h
 An example of `output.tee` for the execution of 
 `./cityandyear.sh ../data Ystad 1983` is provided in the `result/` folder,
 so that you can compare it against your solution above.
+
+# Credits
+
+The metereological data used in this exercise has been downloaded from 
+the official "SMHI - Sveriges meteorologiska och hydrologiska institut"
+website. 
+
+The use of this data is covered by the statements at this link:
+<http://www.smhi.se/data/oppna-data/information-om-oppna-data/villkor-for-anvandning-1.30622>
