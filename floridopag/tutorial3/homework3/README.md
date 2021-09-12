@@ -61,7 +61,7 @@ The Ystad dataset is in the file
    rawdata_smhi-opendata_1_53260_20210906_214756.csv
 ```
 
-The forst lines of the final result should look like this sample below:
+The first lines of the final result should look like this sample below:
 
 ```console
 found file ../data//smhi-opendata_1_53260_20210906_214756.csv
@@ -140,7 +140,7 @@ ignore them as we've seen in the examples in Tutorial 3.
 
 ### Folder structure
 
-the tutorial3/homework structure is as follows:
+the `tutorial3/homework3` structure is as follows:
 
 ```console
 .
@@ -226,5 +226,6 @@ left untouched. You need to send me the bash command you would run for this to h
 >    " I solved the task for maximum grade with this expression:
 >>   `./cityandyear.sh ../data Ystad 1983 | something | something...`"
 
-An example of `output.tee` for the execution of ``./cityandyear.sh ../data Ystad 1983` is provided in the `result/` folder, so that you can compare it against your
-solution above.
+An example of `output.tee` for the execution of 
+`./cityandyear.sh ../data Ystad 1983` is provided in the `result/` folder,
+so that you can compare it against your solution above.
