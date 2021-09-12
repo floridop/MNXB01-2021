@@ -228,7 +228,7 @@ left untouched. You need to send me the bash command you would run for this to h
 >>   `./cityandyear.sh ../data Ystad 1983 | something | something...`"
 
 An example of `output.tee` for the execution of 
-`./cityandyear.sh ../data Ystad 1983` is provided in the `result/` folder,
+`./cityandyear.sh ../data Ystad 1983 | something | something...` is provided in the `result/` folder,
 so that you can compare it against your solution above.
 
 # Credits
