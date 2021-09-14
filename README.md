@@ -1,5 +1,5 @@
-# MNXB01-2020
-Repository for the MNXB01 / NAFY018 course 2020 at Lund University
+# MNXB01-2021
+Repository for the MNXB01 / NAFY018 course 2021 at Lund University
 
 To contribute to this repo:
 
