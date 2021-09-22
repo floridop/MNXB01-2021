@@ -120,6 +120,10 @@ pluma cityandyear.sh&
 chmod +x cityandyear.sh
 ```
 
+While coding you may assume that the `smhicleaner.sh` script and the helper libraries are in the same path as the `cityandyear.sh` script.
+However, correction will be done on a different computer than Aurora, so it is recommended to use relative paths to reference such
+scripts.
+   
 ### How to progress 
 
 The file `cityandyear.sh.pseudocode` contains pseudocode written by the
